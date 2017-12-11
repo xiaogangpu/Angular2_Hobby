@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a img {
+    border: 0;
+}
+
+header,
+nav,
+section,
+article,
+aside,
+footer {
+    display: block;
+}
+
+header {
+    padding: 0;
+    background: #fff;
+    min-height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    -moz-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.3);
+}
+
+.shell {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#logo {
+    float: left;
+    height: 60px;
+    width: 60px;
+}
+
+#logo img {
+    width: 60px;
+    height: 60px;
+    margin: 15px 15px;
+    border-radius: 50px;
+    display: block;
+}
+
+header nav {
+    float: right;
+    position: relative;
+    top: 29px;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav>ul>li {
+    float: left;
+    height: 31px;
+    position: relative;
+}
+
+header nav>ul>li.phone {
+    font-size: 17px;
+    line-height: 31px;
+    padding-left: 24px;
+}
+
+header nav>ul>li>a {
+    display: block;
+    font-size: 17px;
+    line-height: 31px;
+    padding: 0 12px;
+}
+
+header nav>ul>li a:hover,
+header nav>ul>li:hover a {
+    text-decoration: none;
+}
+
+header nav>ul>li.current>a,
+header nav>ul>li:hover>a {
+    color: #000;
+}
+
+header nav>ul>li>.dropdown {
+    top: 31px;
+    left: 0;
+    border-top: 30px solid #fff;
+}
+
+header nav>ul>li>a>.arrow {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-width: 6px 7px;
+    border-style: solid;
+    border-color: #ffff00 transparent transparent;
+    position: absolute;
+    top: 61px;
+    left: 50%;
+    margin-left: -7px;
+    display: none;
+    z-index: 10;
+}
+
+header nav .dropdown {
+    background: url(../../assets/image/dropdown.png);
+    background: rgba(0, 0, 0, .6);
+    position: absolute;
+    width: 220px;
+    display: none;
+}
+
+header nav .dropdown a {
+    display: block;
+    font-size: 13px;
+    line-height: 50px;
+    padding: 0 20px;
+    height: 50px;
+    position: relative;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #000;
+    -moz-transition: all linear .2s;
+    -ms-transition: all linear .2s;
+    -o-transition: all linear .2s;
+    -webkit-transition: all linear .2s;
+    transition: all linear .2s;
+    border-right: 0;
+}
+
+header nav .dropdown li {
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+    width: 220px;
+}
+
+header nav .dropdown>ul>li:first-child {
+    border: none;
+}
+
+header nav .dropdown .arrow {
+    background: url(../../assets/image/arrows.png) -69px -43px;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    display: none;
+}
+
+header .dropdown li.has-dd:hover>a {
+    border-right: 5px solid #fff;
+}
+
+header nav li:hover>a>.arrow {
+    display: block;
+}
+
+header .dropdown .dropdown {
+    top: 0;
+    left: 220px;
+}
