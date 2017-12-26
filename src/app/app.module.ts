@@ -1,13 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,NO_ERRORS_SCHEMA } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from "@angular/router";
-import {HttpModule,JsonpModule,Http} from "@angular/Http";
+import {HttpModule,JsonpModule,Http} from "@angular/http";
 import {ReactiveFormsModule} from "@angular/forms";
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 // import {TranslateModule,TranslateLoader,TranslateStaticLoader} from "ng2-tranlate";
 
 import { AppComponent } from './app.component';
-import {ButtonModule} from 'primeng/primeng';
+
+import {DataGridModule} from 'primeng/primeng';
+import {DialogModule} from 'primeng/primeng';
+
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { FootMenuComponent } from './foot-menu/foot-menu.component';
 import { MyInfoComponent } from './my-info/my-info.component'
@@ -17,6 +21,11 @@ import { MedicineComponent } from './medicine/medicine.component';
 import { ImpressionComponent } from './impression/impression.component';
 import { EchartsInfoDirective } from './impression/echarts-info.directive';
 
+import {GetMedicineService} from './medicine/get-medicine.service';
+
+// export function createTranslateLoader(http: Http) {
+//   return new TranslateStaticLoader(http, './assets/i18n', '.json');
+// }
 
 @NgModule({
   declarations: [
@@ -32,10 +41,16 @@ import { EchartsInfoDirective } from './impression/echarts-info.directive';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ButtonModule,
+    RouterModule,
+    ReactiveFormsModule,
+    HttpModule,
+    JsonpModule,
+    DataGridModule,
+    DialogModule,
     RouterModule.forRoot(appRoute)
   ],
-  providers: [],
+  providers: [GetMedicineService],
+  schemas: [NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
