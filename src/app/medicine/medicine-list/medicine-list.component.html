@@ -1,0 +1,39 @@
+<p-dataGrid [value]="medicineList" [paginator]="true" [rows]="20">
+    <p-header>
+        中草药图栏
+    </p-header>
+    <ng-template let-medicine pTemplate="item">
+        <div style="padding:5px" class="ui-g-12 ui-md-3">
+            <p-panel [header]="medicine.place" [ngStyle]="{'text-align':'center'}" class="ui-panel-content ui-widget-content">
+                <img src="assets/images/demo/{{medicine.img}}" style="display:inline-block;width:80px;height:80px;">
+                <div class="car-detail">{{medicine.class}} -- {{medicine.effect}}</div>
+                <hr class="ui-widget-content" style="border-top:0">
+                <i class="fa fa-search" (click)="selectCar(medicine)" style="cursor:pointer;display:inline-block;"></i>
+            </p-panel>
+        </div>
+    </ng-template>
+</p-dataGrid>
+
+<p-dialog header="药品详情" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" width="285" (onAfterHide)="onDialogHide()">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad" *ngIf="selectedMedicine" style="font-size:16px;text-align:center;padding:20px">
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-12" style="text-align:center;"><img src="assets/images/demo/{{selectedMedicine.img}}"></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4">名称: </div>
+            <div class="ui-grid-col-8">{{selectedMedicine.name}}</div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4">分类: </div>
+            <div class="ui-grid-col-8">{{selectedMedicine.class}}</div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4">产地: </div>
+            <div class="ui-grid-col-8">{{selectedMedicine.place}}</div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4">药效: </div>
+            <div class="ui-grid-col-8">{{selectedMedicine.effect}}</div>
+        </div>
+    </div>
+</p-dialog>

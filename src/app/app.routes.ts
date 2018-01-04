@@ -12,12 +12,12 @@ export const appRoute = [
 	},
 	{
 		path:'medicine',
-		component:MedicineComponent
+		loadChildren:'./medicine/medicine.module#MedicineModule'
 	},
-	{
-		path:'study',
-		loadChildren:'./study/study.module#StudyModule'
-	},
+	// {
+	// 	path:'study',
+	// 	loadChildren:'./study/study.module#StudyModule'
+	// },
 	{
 		path:'**',
 		component:ImpressionComponent

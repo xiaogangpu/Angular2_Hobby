@@ -1,7 +1,7 @@
 import { Component, OnInit,Input,Output,ElementRef,HostListener } from '@angular/core';
 import * as $ from 'jquery';
 import * as echarts from 'echarts';
-import {api}  from 'echarts/echarts-all-3.js';
+// import {api}  from 'echarts/echarts-all-3.js';
 
 @Component({
   selector: 'app-impression',

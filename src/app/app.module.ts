@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule,NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from "@angular/router";
 import {HttpModule,JsonpModule,Http} from "@angular/http";
@@ -9,19 +9,13 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppComponent } from './app.component';
 
-import {DataGridModule} from 'primeng/primeng';
-import {DialogModule} from 'primeng/primeng';
-
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { FootMenuComponent } from './foot-menu/foot-menu.component';
 import { MyInfoComponent } from './my-info/my-info.component'
  import { appRoute } from './app.routes';
 
-import { MedicineComponent } from './medicine/medicine.component';
 import { ImpressionComponent } from './impression/impression.component';
 import { EchartsInfoDirective } from './impression/echarts-info.directive';
-
-import {GetMedicineService} from './medicine/get-medicine.service';
 
 // export function createTranslateLoader(http: Http) {
 //   return new TranslateStaticLoader(http, './assets/i18n', '.json');
@@ -34,23 +28,18 @@ import {GetMedicineService} from './medicine/get-medicine.service';
     FootMenuComponent,
     MyInfoComponent,
     ImpressionComponent,
-    MedicineComponent,
-    ImpressionComponent,
     EchartsInfoDirective
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     RouterModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpModule,
     JsonpModule,
-    DataGridModule,
-    DialogModule,
     RouterModule.forRoot(appRoute)
   ],
-  providers: [GetMedicineService],
-  schemas: [NO_ERRORS_SCHEMA ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
@@ -59,3 +48,4 @@ export class AppModule { }
 
 // import { SharedModule } from './shared/shared.module';
 // import { LoginComponent } from './login/login.component';
+  // schemas: [NO_ERRORS_SCHEMA ],
