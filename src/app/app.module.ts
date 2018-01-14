@@ -11,8 +11,8 @@ import { AppComponent } from './app.component';
 
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { FootMenuComponent } from './foot-menu/foot-menu.component';
-import { MyInfoComponent } from './my-info/my-info.component'
- import { appRoute } from './app.routes';
+
+ import { appRoutes } from './app.routes';
 
 import { ImpressionComponent } from './impression/impression.component';
 import { EchartsInfoDirective } from './impression/echarts-info.directive';
@@ -26,7 +26,6 @@ import { EchartsInfoDirective } from './impression/echarts-info.directive';
     AppComponent,
     TopMenuComponent,
     FootMenuComponent,
-    MyInfoComponent,
     ImpressionComponent,
     EchartsInfoDirective
   ],
@@ -37,7 +36,7 @@ import { EchartsInfoDirective } from './impression/echarts-info.directive';
     ReactiveFormsModule,
     HttpModule,
     JsonpModule,
-    RouterModule.forRoot(appRoute)
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

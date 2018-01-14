@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row line">
+        <div class="col-sm-4">
+            <span>{{detail.author}}</span>
+        </div>
+        <div class="col-sm-4">
+            <span>{{detail.time}}</span>
+        </div>
+        <div class="col-sm-4">
+            <span><i class="fa fa-eye"></i>&ngsp;{{detail.title}}</span>
+        </div>
+    </div>
+    <div class="row line">
+        <h3>心得感悟：</h3>
+        <div class="col-sm-12 content" [innerHTML]="detail.content">
+
+        </div>
+    </div>
+</div>

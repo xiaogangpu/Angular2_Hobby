@@ -1,0 +1,12 @@
+.line {
+    margin: 30px;
+    text-align: center;
+    font-size: 20px;
+    color: #000;
+}
+
+.content {
+    font-size: 31px;
+    border: 1px solid #ffff00;
+    color: royalblue;
+}

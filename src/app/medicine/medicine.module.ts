@@ -14,7 +14,7 @@ import {PanelModule} from 'primeng/primeng';
 // import {PaginatorModule} from 'primeng/components/paginator/paginator';
 // import {PanelModule} from 'primeng/components/panel/panel';
 
-import {GetMedicineService} from './get-medicine.service';
+import {GetMedicineService} from './service/get-medicine.service';
 import { MedicineListComponent } from './medicine-list/medicine-list.component';
 
 import {medicineRoutes} from './medicine.routes';

@@ -1,7 +1,7 @@
 import {ImpressionComponent} from "./impression/impression.component";
 import {MedicineComponent} from "./medicine/medicine.component";
 
-export const appRoute = [
+export const appRoutes = [
 	{
 		path:'',
 		redirectTo:'impression',
@@ -14,10 +14,10 @@ export const appRoute = [
 		path:'medicine',
 		loadChildren:'./medicine/medicine.module#MedicineModule'
 	},
-	// {
-	// 	path:'study',
-	// 	loadChildren:'./study/study.module#StudyModule'
-	// },
+	{
+		path:'myInfo',
+		loadChildren:'./my-info/my-info.module#MyInfoModule'
+	},
 	{
 		path:'**',
 		component:ImpressionComponent

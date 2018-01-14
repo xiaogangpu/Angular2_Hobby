@@ -1,8 +1,14 @@
-import { Component, OnInit, enableProdMode} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 
-import {GetMedicineService} from '../get-medicine.service';
+import {GetMedicineService} from '../service/get-medicine.service';
 import {Medicine} from '../model/medicine-model';
+
+// import {DataGridModule} from 'primeng/primeng';
+// import {DialogModule} from 'primeng/primeng';
+// import {PaginatorModule} from 'primeng/primeng';
+// import {PanelModule} from 'primeng/primeng';
+
 
 @Component({
   selector: 'app-medicine-list',
@@ -28,7 +34,7 @@ export class MedicineListComponent implements OnInit {
   ) { }
 
   ngOnInit() { 
-    enableProdMode();
+    //enableProdMode();
     this.renderList();
     // this.activatedRoute.params.subscribe(params => {
     //   this.currentPage = params.page;

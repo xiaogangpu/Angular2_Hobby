@@ -3,11 +3,11 @@ import { Http, Response, Headers, RequestOptions, URLSearchParams} from '@angula
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
-import {Medicine} from './model/medicine-model';
+import {Medicine} from '../model/medicine-model';
 
 @Injectable()
 export class GetMedicineService {
-  public listUrl = '../../assets/mock-data/medicine.json';
+  public listUrl = '../../../assets/mock-data/medicine.json';
 
   constructor(public http: Http) { }
 
