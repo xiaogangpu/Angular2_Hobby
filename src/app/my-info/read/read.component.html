@@ -11,7 +11,7 @@
                     <i class="fa fa-eye"></i>&ngsp;&nbsp;{{read.label}}
                 </p>
             </div>
-            <div class="pagiBar">
+            <div class="pagiBar" [style]="{'text-align':'center'}">
                 <p-paginator rows="{{itemsPerPage}}" totalRecords="{{totalData}}" first="{{offset}}" (onPageChange)="pageChange($event)">
                 </p-paginator>
             </div>

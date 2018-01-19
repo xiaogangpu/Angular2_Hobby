@@ -13,8 +13,8 @@ import { Text} from '../model/text-model';
 })
 export class ReadComponent implements OnInit {
   public readList:Text[];
-
-  public totalData: number = 0;
+                                      // 此模块演示对于一次性请求回来的所有数据自己分页处理来显示
+  public totalData: number = 0;       // 这个应该是后台返回一个total总数据数，现在模拟使用一次返回的。
   public currentPage: number = 1;
   public itemsPerPage: number = 5;
   public offset: number = 0;
@@ -35,6 +35,7 @@ export class ReadComponent implements OnInit {
     this.offset = (this.currentPage - 1)*this.itemsPerPage;
     this.end = this.currentPage*this.itemsPerPage;
     return this.readService.getReadList(this.currentPage).subscribe(res=>{
+      // this.totalData = res['total'];
       this.totalData = res['items'].length;
       this.readList = res['items'].slice(this.offset,this.end > this.totalData ? this.totalData : this.end);
     },

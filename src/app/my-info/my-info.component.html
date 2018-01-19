@@ -1,3 +1,45 @@
-<p>
-  my-info works!
-</p>
+<div class="container box-container">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="content-container">
+                <swiper *ngIf="type == 'component' && show" class="swiper-container" [config]="config">
+                    <div *ngFor="let slide of slides" class="swiper-slide">
+                        <div>
+                            {{slide}}
+                        </div>
+                    </div>
+                </swiper>
+
+                <div *ngIf="type == 'directive' && show" class="swiper-container" [swiper]="config">
+                    <div class="swiper-wrapper">
+                        <div*ngFor="let slide of slides" class="swiper-slide">
+                            <div>
+                                {{slide.name}}
+                            </div>
+                            <img class="picCro" src="assets/images/menu/{{slide.src}}" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-scrollbar" [hidden]="config.scrollbar === false"></div>
+            <div class="swiper-pagination" [hidden]="config.pagination === false"></div>
+
+            <div class="swiper-button-prev" [hidden]="config.navigation === false"></div>
+            <div class="swiper-button-next" [hidden]="config.navigation === false"></div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-5">
+    <div class="action-container">
+        <div class="action-button" [routerLink]="myInfo/read/1">随言笔记</div>
+
+        <div class="action-button" [routerLink]="myInfo/tour/1">旅之弥散</div>
+
+        <div class="action-button" [routerLink]="myInfo/read/1"></div>
+
+        <div class="action-button" [routerLink]="myInfo/read/1"></div>
+    </div>
+</div>
+</div>
+</div>
