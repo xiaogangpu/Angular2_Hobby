@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule} from '@angular/router';
+// import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import {DataGridModule} from 'primeng/primeng';
 import {DialogModule} from 'primeng/primeng';
@@ -16,19 +17,25 @@ import { SwiperModule, SwiperConfigInterface, SWIPER_CONFIG} from 'ngx-swiper-wr
     centeredSlides: true
   };
 
+
 import { MyInfoComponent } from './my-info.component';
 import { TourComponent } from './tour/tour.component';
 import { ReadComponent } from './read/read.component';
 import { AnimeComponent } from './anime/anime.component';
 import { ReadDetailComponent } from './read/read-detail/read-detail.component';
 import { TourDetailComponent } from './tour/tour-detail/tour-detail.component';
+import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 
 import {ReadService} from './read/service/read.service';
 import {ReadDetailService} from './read/read-detail/services/read-detail.service';
 import {TourService} from './tour/service/tour.service';
 import {TourDetailService} from './tour/tour-detail/services/tour-detail.service';
+import {ListService} from './infinite-scroll/services/list.service';
+
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { myInfoRoutes} from './my-info.routes';
+
 
 @NgModule({
   imports: [
@@ -39,6 +46,7 @@ import { myInfoRoutes} from './my-info.routes';
     DataGridModule,
     RouterModule,
     SwiperModule,
+    InfiniteScrollModule,
     RouterModule.forChild(myInfoRoutes)
   ],
   declarations: [ 
@@ -47,7 +55,8 @@ import { myInfoRoutes} from './my-info.routes';
     ReadComponent,
     AnimeComponent,
     ReadDetailComponent,
-    TourDetailComponent
+    TourDetailComponent,
+    InfiniteScrollComponent
   ],
   providers: [
     {
@@ -57,7 +66,8 @@ import { myInfoRoutes} from './my-info.routes';
     ReadService,
     ReadDetailService,
     TourService,
-    TourDetailService
+    TourDetailService,
+    ListService
   ]
 })
 export class MyInfoModule { }

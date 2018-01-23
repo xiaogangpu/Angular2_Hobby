@@ -5,41 +5,48 @@
                 <swiper *ngIf="type == 'component' && show" class="swiper-container" [config]="config">
                     <div *ngFor="let slide of slides" class="swiper-slide">
                         <div>
-                            {{slide}}
+                            {{slide["name"]}}
                         </div>
                     </div>
                 </swiper>
 
                 <div *ngIf="type == 'directive' && show" class="swiper-container" [swiper]="config">
                     <div class="swiper-wrapper">
-                        <div*ngFor="let slide of slides" class="swiper-slide">
-                            <div>
-                                {{slide.name}}
+                        <div *ngFor="let slide of slides" class="swiper-slide">
+                            <div class="nameCro">
+                                {{slide["name"]}}
                             </div>
-                            <img class="picCro" src="assets/images/menu/{{slide.src}}" />
+                            <img class="picCro" src="assets/images/menu/{{slide['src']}}">
+                        </div>
                     </div>
+                    <!-- <div class="swiper-scrollbar" [hidden]="config.scrollbar === false"></div> -->
+                    <!-- <div class="swiper-pagination" [hidden]="config.pagination === false"></div> -->
+
+                    <div class="swiper-button-prev" [hidden]="config.navigation === false"></div>
+                    <div class="swiper-button-next" [hidden]="config.navigation === false"></div>
                 </div>
             </div>
+        </div>
 
-            <div class="swiper-scrollbar" [hidden]="config.scrollbar === false"></div>
-            <div class="swiper-pagination" [hidden]="config.pagination === false"></div>
+        <div class="col-md-5">
+            <div class="action-container">
+                <a class="action-button" routerLink="myInfo/read/1">旅之弥散</a>
 
-            <div class="swiper-button-prev" [hidden]="config.navigation === false"></div>
-            <div class="swiper-button-next" [hidden]="config.navigation === false"></div>
+                <a class="action-button" routerLink="myInfo/tour/1">我的大学</a>
+
+                <a class="action-button" routerLink="myInfo/read/1">随言笔记</a>
+
+                <a class="action-button" routerLink="myInfo/read/1">动漫记忆</a>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="col-md-5">
-    <div class="action-container">
-        <div class="action-button" [routerLink]="myInfo/read/1">随言笔记</div>
+    <div class="row">
+        <div class="col-md-7">
+            <app-infinite-scroll></app-infinite-scroll>
+        </div>
+        <div class="col-md-5">
 
-        <div class="action-button" [routerLink]="myInfo/tour/1">旅之弥散</div>
-
-        <div class="action-button" [routerLink]="myInfo/read/1"></div>
-
-        <div class="action-button" [routerLink]="myInfo/read/1"></div>
+        </div>
     </div>
-</div>
-</div>
 </div>

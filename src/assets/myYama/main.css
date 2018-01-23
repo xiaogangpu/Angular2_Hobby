@@ -22,6 +22,6 @@ body {
     background-color: #f7f7f7;
 }
 
-.main-content {
-    
+a {
+    text-decoration: none;
 }

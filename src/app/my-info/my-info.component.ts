@@ -12,11 +12,11 @@ import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
 })
 export class MyInfoComponent{
   public slides = [
-    {src:"1.jpg",name:"光华"},
-    {src:"2.jpg",name:"悠悠"},
-    {src:"3.jpg",name:"平清盛"},
-    {src:"4.jpg",name:"大平"},
-    {src:"5.jpg",name:"不知火舞"}
+    {"src":"1.jpg","name":"光华"},
+    {"src":"2.jpg","name":"悠悠"},
+    {"src":"3.jpg","name":"平清盛"},
+    {"src":"4.jpg","name":"大平"},
+    {"src":"5.jpg","name":"不知火舞"}
   ];
   public instance: any;
   public type: string = 'directive';
@@ -51,7 +51,7 @@ export class MyInfoComponent{
     keyboard: true,
     mousewheel: true,
     scrollbar: false,
-    navigation: false,
+    navigation: true,
     pagination: false,
     loop:true,
     uniqueNavElements:false,

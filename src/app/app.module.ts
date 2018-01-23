@@ -16,6 +16,7 @@ import { FootMenuComponent } from './foot-menu/foot-menu.component';
 
 import { ImpressionComponent } from './impression/impression.component';
 import { EchartsInfoDirective } from './impression/echarts-info.directive';
+import { InfoBarComponent } from './info-bar/info-bar.component';
 
 // export function createTranslateLoader(http: Http) {
 //   return new TranslateStaticLoader(http, './assets/i18n', '.json');
@@ -27,7 +28,8 @@ import { EchartsInfoDirective } from './impression/echarts-info.directive';
     TopMenuComponent,
     FootMenuComponent,
     ImpressionComponent,
-    EchartsInfoDirective
+    EchartsInfoDirective,
+    InfoBarComponent
   ],
   imports: [
     BrowserModule,
