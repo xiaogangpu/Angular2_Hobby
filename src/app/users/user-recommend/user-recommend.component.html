@@ -1,0 +1,23 @@
+<div class="recommend">
+    <div class="page-users">
+        <div class="name">创作者名字</div>
+        <a href="#" class="page-more">
+            <i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;&nbsp;<span>换一批</span>
+        </a>
+    </div>
+    <ul class="list">
+        <li *ngFor="let li of arr">
+            <div class="avatar">
+                <img src="assets/images/person/{{li.avatar}}" alt="">
+            </div>
+            <a class="follow" routerLink='users/user-list-detail/1'>
+                <i class="fa fa-smile-o" aria-hidden="true"></i>&nbsp;<span>关注</span>
+            </a>
+            <a class="name" routerLink='users/user-list-detail/1'>{{li.name}}</a>
+            <div class="info"> <i class="fa fa-hand-peace-o" aria-hidden="true"></i>{{li.like}}喜欢</div>
+        </li>
+    </ul>
+    <a class="find-more" routerLink='users/user-list/1'>
+        查看更多
+    </a>
+</div>

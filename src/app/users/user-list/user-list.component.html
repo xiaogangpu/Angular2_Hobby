@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="banner">
+        <div class="header">
+            <i class="fa fa-star" aria-hidden="true"></i>&ngsp;推荐作者
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor="let dot of dataArr" class="col-md-4">
+            <div class="item">
+                <a routerLink="">
+                    <img class="avatar" src="asserts/images/user/{{dot.avatar}}" />
+                    <h4>{{dot.name}}</h4>
+                    <div class="description">
+                        {{dot.brief}}
+                    </div>
+                    <a class="btn">
+                        <i class="fa fa-eye" aria-hidden="true"></i>&ngsp;关注
+                    </a>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

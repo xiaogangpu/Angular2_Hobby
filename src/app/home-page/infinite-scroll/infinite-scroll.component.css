@@ -1,0 +1,78 @@
+.main-panel {
+    width: 100%;
+    font: size 16px;
+    color: #000000;
+    overflow: hidden;
+}
+
+.results {
+    height: 100%;
+}
+
+.spinner {
+    margin: 10px 0 10px 0;
+    padding: 5px 0;
+    background: #f6eddc;
+    text-align: left;
+    font-size: 26px;
+}
+
+.a-line {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 3px dotted #E3E2E2;
+}
+
+.a-line a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.a-top {
+    margin-bottom: 5px;
+}
+
+.top-pic {
+    float: left;
+}
+
+.top-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    display: block;
+}
+
+.top-label {
+    padding: 9px 50px;
+    font-size: 15px;
+    color: #000000;
+}
+
+.top-name {
+    margin: 5px 0 10px 0;
+}
+
+.top-text {
+    height: 72px;
+    line-height: 18px;
+    font-size: 14px;
+    color: #000000;
+}
+
+.top-foot {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #000000;
+}
+
+.foot-pic {
+    padding: 10% 0 0;
+    width: 100%;
+    height: auto;
+}
+
+.foot-img {
+    width: 100%;
+    height: 100%;
+}

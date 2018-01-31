@@ -15,8 +15,12 @@ export const appRoutes = [
 		loadChildren:'./medicine/medicine.module#MedicineModule'
 	},
 	{
-		path:'myInfo',
-		loadChildren:'./my-info/my-info.module#MyInfoModule'
+		path:'homePage',
+		loadChildren:'./home-page/home-page.module#HomePageModule'
+	},
+	{
+		path: 'users',
+		loadChildren: './users/users.module#UsersModule'
 	},
 	{
 		path:'**',

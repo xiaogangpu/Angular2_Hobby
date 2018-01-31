@@ -1,0 +1,31 @@
+<div class="main-panel">
+    <div class="results" infinite-scroll [infiniteScrollDistance]="scrollDistance" [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()">
+        <div class="spinner">
+            <i class="fa fa-diamond" aria-hidden="true"></i>&ngsp;&nbsp;发现
+        </div>
+        <div class="row a-line" *ngFor="let li of array">
+            <div class="col-md-9">
+                <div class="a-top">
+                    <div class="top-pic">
+                        <img src="assets/images/tour/{{li.src}}.jpg" alt="" class="top-img">
+                    </div>
+                    <div class="top-label">{{li.label}}</div>
+                </div>
+                <h3 class="top-name"><a [routerLink]="['/homePage/infinite-scroll-detail',li.id]">{{li.name}}</a></h3>
+                <div class="top-text">
+                    <a [routerLink]="['/homePage/infinite-scroll-detail',li.id]">{{li.text}}</a>
+                </div>
+                <div class="top-foot">
+                    <i class="fa fa-pie-chart" aria-hidden="true"></i>&nbsp;<span>{{li.time}}</span>&ngsp;&nbsp;&nbsp;
+                    <i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;<span>{{li.person}}</span>&ngsp;&nbsp;&nbsp;
+                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;<span>{{li.num}}</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="foot-pic">
+                    <img src="assets/images/tour/{{li.img}}" alt="" class="foot-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
