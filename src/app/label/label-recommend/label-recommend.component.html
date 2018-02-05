@@ -1,0 +1,9 @@
+<div class="label-recommend">
+    <a *ngFor="let li of dataArr" class="collection" [routerLink]="['/label/label-list-tab',li.id]">
+        <img src="assets/images/label/{{li.avatar}}" class="pic">
+        <div class="name">
+            {{li.name}}
+        </div>
+    </a>
+    <a class="label-more" [routerLink]="['/label/label-list']">更多热门专题</a>
+</div>

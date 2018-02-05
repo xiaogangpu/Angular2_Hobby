@@ -6,14 +6,14 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class UserListServiceService {
-  public userListUrl = '../../../../asserts/mock-data/person-recommend.json';
+  public userListUrl = '../../../../assets/mock-data/person-recommend.json';
   
   constructor(
     public http: Http
   ) { }
 
   public getData() {
-    this.http.get(this.userListUrl)
+    return this.http.get(this.userListUrl)
         .map((res:Response)=>{
           let result = res.json();
           return result;

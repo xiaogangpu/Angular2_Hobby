@@ -1,6 +1,6 @@
 <div class="container box-container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-offset-1 col-md-7">
             <div class="content-container">
                 <swiper *ngIf="type == 'component' && show" class="swiper-container" [config]="config">
                     <div *ngFor="let slide of slides" class="swiper-slide">
@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3 ">
             <div class="action-container">
                 <a class="action-button" routerLink="homePage/read/1">旅之弥散</a>
 
@@ -42,10 +42,11 @@
     </div>
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-offset-1 col-md-7">
+            <app-label-recommend></app-label-recommend>
             <app-infinite-scroll></app-infinite-scroll>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <app-user-recommend></app-user-recommend>
         </div>
     </div>

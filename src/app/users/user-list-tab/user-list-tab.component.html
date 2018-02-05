@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="row">
+        <div class="results col-md-offset-1 col-md-10" infinite-scroll [infiniteScrollDistance]="scrollDistance" [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()">
+            <div class="banner">
+                <img src="assets/images/tab/{{personData.avatar}}" class="avatar" />
+                <div class="btn-add">
+                    <i class="fa fa-star" aria-hidden="true"></i>&ngsp;关注
+                </div>
+                <div class="btn-follow">
+                    私信
+                </div>
+                <div class="title">
+                    {{personData.name}}
+                </div>
+                <div class="info">
+                    <i class="fa fa-pie-chart" aria-hidden="true"></i>&nbsp;<span>{{personData.like}}</span>&ngsp;&nbsp;
+                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;<span>{{personData.brief}}</span>
+                </div>
+            </div>
+            <ngx-tabset [customNavClass]="'nav-test-class'" [customTabsClass]="'tabset'" [animate]="true" (onSelect)="onTabSelect($event)">
+                <ngx-tab title="所有文章">
+                    <div class="row a-line" *ngFor="let all of tabData0">
+                        <div class="col-md-9">
+                            <div class="a-top">
+                                <div class="top-pic">
+                                    <img src="assets/images/tab/{{all.src}}" alt="" class="top-img">
+                                </div>
+                                <div class="top-label">{{all.label}}</div>
+                            </div>
+                            <h3 class="top-name"><a [routerLink]="['/users/user-list-tab-detail',all.id]">{{all.name}}</a></h3>
+                            <div class="top-text">
+                                <a [routerLink]="['/users/user-list-tab-detail',all.id]">{{all.text}}</a>
+                            </div>
+                            <div class="top-foot">
+                                <i class="fa fa-pie-chart" aria-hidden="true"></i>&nbsp;<span>{{all.time}}</span>&ngsp;&nbsp;&nbsp;
+                                <i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;<span>{{all.person}}</span>&ngsp;&nbsp;&nbsp;
+                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;<span>{{all.num}}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="foot-pic">
+                                <img src="assets/images/tab/{{all.img}}" alt="" class="foot-img">
+                            </div>
+                        </div>
+                    </div>
+                </ngx-tab>
+                <ngx-tab title="热门">
+                    <div class="row a-line" *ngFor="let hot of tabData1">
+                        <div class="col-md-9">
+                            <div class="a-top">
+                                <div class="top-pic">
+                                    <img src="assets/images/tab/{{hot.src}}" alt="" class="top-img">
+                                </div>
+                                <div class="top-label">{{hot.label}}</div>
+                            </div>
+                            <h3 class="top-name"><a [routerLink]="['/users/user-list-tab-detail',hot.id]">{{hot.name}}</a></h3>
+                            <div class="top-text">
+                                <a [routerLink]="['/users/user-list-tab-detail',hot.id]">{{hot.text}}</a>
+                            </div>
+                            <div class="top-foot">
+                                <i class="fa fa-pie-chart" aria-hidden="true"></i>&nbsp;<span>{{hot.time}}</span>&ngsp;&nbsp;&nbsp;
+                                <i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;<span>{{hot.person}}</span>&ngsp;&nbsp;&nbsp;
+                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;<span>{{hot.num}}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="foot-pic">
+                                <img src="assets/images/tab/{{hot.img}}" alt="" class="foot-img">
+                            </div>
+                        </div>
+                    </div>
+                </ngx-tab>
+                <ngx-tab title="最新动态">
+                    <div class="row a-line" *ngFor="let new of tabData2">
+                        <div class="col-md-9">
+                            <div class="a-top">
+                                <div class="top-pic">
+                                    <img src="assets/images/tab/{{new.src}}" alt="" class="top-img">
+                                </div>
+                                <div class="top-label">{{new.label}}</div>
+                            </div>
+                            <h3 class="top-name"><a [routerLink]="['/users/user-list-tab-detail',new.id]">{{new.name}}</a></h3>
+                            <div class="top-text">
+                                <a [routerLink]="['/users/user-list-tab-detail',new.id]">{{new.text}}</a>
+                            </div>
+                            <div class="top-foot">
+                                <i class="fa fa-pie-chart" aria-hidden="true"></i>&nbsp;<span>{{new.time}}</span>&ngsp;&nbsp;&nbsp;
+                                <i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;<span>{{new.person}}</span>&ngsp;&nbsp;&nbsp;
+                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;<span>{{new.num}}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="foot-pic">
+                                <img src="assets/images/tab/{{new.img}}" alt="" class="foot-img">
+                            </div>
+                        </div>
+                    </div>
+                </ngx-tab>
+            </ngx-tabset>
+        </div>
+    </div>
+</div>

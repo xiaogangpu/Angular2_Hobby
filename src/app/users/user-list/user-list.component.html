@@ -7,8 +7,8 @@
     <div class="row">
         <div *ngFor="let dot of dataArr" class="col-md-4">
             <div class="item">
-                <a routerLink="">
-                    <img class="avatar" src="asserts/images/user/{{dot.avatar}}" />
+                <a [routerLink]="['/users/user-list-tab',dot.id]">
+                    <img class="avatar" src="assets/images/person/{{dot.avatar}}" />
                     <h4>{{dot.name}}</h4>
                     <div class="description">
                         {{dot.brief}}

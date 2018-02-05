@@ -20,7 +20,7 @@ export class InfiniteScrollDetailComponent implements OnInit {
 
   ngOnInit() {
     this.activated.params.subscribe(params=>{
-      this.loadData(params['tourId']);
+      this.loadData(params['detailId']);
     });
   }
 

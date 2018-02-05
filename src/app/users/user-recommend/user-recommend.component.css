@@ -1,6 +1,10 @@
 .recommend {
-    width: 280px;
+    width: 100%;
     margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
 }
 
 .page-users {
@@ -65,7 +69,8 @@ li .info {
     left: 0;
     width: 100%;
     font-size: 13px;
-    color: #787878;
+    text-align: center;
+    color: #333;
     background-color: #f7f7f7;
     border: 1px solid #dcdcdc;
     border-radius: 4px;

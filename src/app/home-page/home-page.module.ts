@@ -10,6 +10,7 @@ import { ReadDetailComponent } from './read/read-detail/read-detail.component';
 import { TourDetailComponent } from './tour/tour-detail/tour-detail.component';
 import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 import { UserRecommendComponent} from '../users/user-recommend/user-recommend.component';
+import { LabelRecommendComponent } from '../label/label-recommend/label-recommend.component';
 import { InfiniteScrollDetailComponent } from './infinite-scroll/infinite-scroll-detail/infinite-scroll-detail.component';
 
 import {ReadService} from './read/service/read.service';
@@ -57,6 +58,7 @@ import { homePageRoutes} from './home-page.routes';
     TourDetailComponent,
     InfiniteScrollComponent,
     UserRecommendComponent,
+    LabelRecommendComponent,
     InfiniteScrollDetailComponent
   ],
   providers: [

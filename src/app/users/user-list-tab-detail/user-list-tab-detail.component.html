@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row header">
+        <h1>{{detail.title}}</h1>
+    </div>
+    <div class="row text-center line">
+        <div class="col-md-1 col-md-offset-4">
+            <img src="assets/images/menu/{{detail.src}}" class="logo">
+        </div>
+        <div class="col-md-7 text-left">
+            <div class="row">
+                {{detail.author}}
+            </div>
+            <div class="row">
+                <span><i class="fa fa-eye"></i>&ngsp;{{detail.time}}</span>&nbsp;&nbsp;&nbsp;
+                <span><i class="fa fa-heart"></i>&ngsp;{{detail.like}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8 col-md-offset-2 content" [innerHTML]="detail.content">
+        </div>
+    </div>
+</div>

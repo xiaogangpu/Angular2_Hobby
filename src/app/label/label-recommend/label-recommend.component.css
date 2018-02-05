@@ -1,0 +1,40 @@
+.label-recommend {
+    margin-bottom: 15px;
+    text-align: left;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+.collection {
+    height: 32px;
+    vertical-align: top;
+    margin: 0 17px 17px 0;
+    display: inline-block;
+    background: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pic {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.name {
+    display: inline-block;
+    padding: 0 55px 0 6px;
+    font-size: 14px;
+}
+
+.label-more {
+    margin-top: 7px;
+    display: inline-block;
+    font-size: 14px;
+    color: #787878;
+}

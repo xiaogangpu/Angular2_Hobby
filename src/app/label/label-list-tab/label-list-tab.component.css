@@ -1,0 +1,138 @@
+.banner {
+    width: 100%;
+    margin: 15px 0 0 0;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+}
+
+.btn-add {
+    float: right;
+    padding: 8px 0;
+    width: 100px;
+    margin: 23px 0 23px 16px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #42c02e;
+    text-align: center;
+    border-radius: 40px;
+    font-weight: 400;
+    border: 1px solid transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: auto !important;
+    cursor: pointer;
+}
+
+.btn-follow {
+    float: right;
+    margin: 23px 0 23px 16px;
+    font-size: 15px;
+    border: 1px solid rgba(59, 194, 29, .7);
+    background-color: #42c02e;
+    color: #42c02e!important;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 40px;
+    background: none;
+    padding: 8px 0;
+    width: 90px;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.title {
+    padding: 5px 0 0 100px;
+}
+
+.info {
+    margin-top: 5px;
+    padding-left: 100px;
+    font-size: 14px;
+}
+
+.tabset {
+    width: 100%;
+}
+
+.a-line {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 3px dotted #E3E2E2;
+}
+
+.a-line a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.a-top {
+    margin-bottom: 5px;
+}
+
+.top-pic {
+    float: left;
+}
+
+.top-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    display: block;
+}
+
+.top-label {
+    padding: 9px 50px;
+    font-size: 15px;
+    color: #000000;
+}
+
+.top-name {
+    margin: 5px 0 10px 0;
+}
+
+.top-text {
+    height: 72px;
+    line-height: 18px;
+    font-size: 14px;
+    color: #000000;
+}
+
+.top-foot {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #000000;
+}
+
+.foot-pic {
+    padding: 10% 0 0;
+    width: 100%;
+    height: auto;
+}
+
+.foot-img {
+    width: 100%;
+    height: 100%;
+}

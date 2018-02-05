@@ -23,13 +23,13 @@ export class UserListComponent implements OnInit {
   }
 
   public loadData() {
-    // this.userListService.getData().subscribe(
-    //   res=>{
-    //     this.dataArr = res['items'];
-    //   },
-    //   error=>{},
-    //   ()=>{}
-    // );
+    this.userListService.getData().subscribe(
+      res=>{
+        this.dataArr = res['items'];
+      },
+      error=>{},
+      ()=>{}
+    );
   }
     
 }

@@ -23,6 +23,10 @@ export const appRoutes = [
 		loadChildren: './users/users.module#UsersModule'
 	},
 	{
+		path: 'label',
+		loadChildren: './label/label.module#LabelModule'
+	},
+	{
 		path:'**',
 		component:ImpressionComponent
 	}

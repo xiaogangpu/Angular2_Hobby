@@ -32,7 +32,27 @@
                         </ul>
                     </section>
                 </li>
-                <li><a href="#">时光机</a></li>
+                <li>
+                    <ul *ngIf="!currentUser?.userName" class="nav navbar-nav navbar-right">
+                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            <a routerLink="login">登录</a>
+                        </li>
+                        <li routerLinkActive="active">
+                            <a routerLink="register">注册</a>
+                        </li>
+                    </ul>
+                    <ul *ngIf="currentUser?.userName" class="nav navbar-nav navbar-right">
+                        <li routerLinkActive="active">
+                            <a routerLink="user">欢迎：{{currentUser?.userName}}</a>
+                        </li>
+                        <li routerLinkActive="active">
+                            <a routerLink="manage">后台管理</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="doLogout()">{{'app.logout' | translate}}</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
 

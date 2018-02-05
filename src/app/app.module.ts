@@ -16,12 +16,13 @@ import { FootMenuComponent } from './foot-menu/foot-menu.component';
 
 import { ImpressionComponent } from './impression/impression.component';
 import { EchartsInfoDirective } from './impression/echarts-info.directive';
-import { InfoBarComponent } from './info-bar/info-bar.component';
-import { LabelComponent } from './label/label.component';
-import { UserListComponent } from './users/user-list/user-list.component';
-import { UserListDetailComponent } from './users/user-list-detail/user-list-detail.component';
 
 import { UserRecommendServiceService} from './users/user-recommend/services/user-recommend-service.service';
+import { LabelRecommendService} from './label/label-recommend/services/label-recommend.service';
+import { UserLoginComponent } from './manage/user-login/user-login.component';
+import { UserRegistryComponent } from './manage/user-registry/user-registry.component';
+import { UserTableComponent } from './manage/user-table/user-table.component';
+import { ArticleTableComponent } from './manage/article-table/article-table.component';
 // export function createTranslateLoader(http: Http) {
 //   return new TranslateStaticLoader(http, './assets/i18n', '.json');
 // }
@@ -33,10 +34,10 @@ import { UserRecommendServiceService} from './users/user-recommend/services/user
     FootMenuComponent,
     ImpressionComponent,
     EchartsInfoDirective,
-    InfoBarComponent,
-    LabelComponent,
-    UserListComponent,
-    UserListDetailComponent
+    UserLoginComponent,
+    UserRegistryComponent,
+    UserTableComponent,
+    ArticleTableComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +49,8 @@ import { UserRecommendServiceService} from './users/user-recommend/services/user
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    UserRecommendServiceService
+    UserRecommendServiceService,
+    LabelRecommendService
   ],
   bootstrap: [AppComponent]
 })
