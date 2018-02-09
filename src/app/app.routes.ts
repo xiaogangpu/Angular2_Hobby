@@ -27,6 +27,10 @@ export const appRoutes = [
 		loadChildren: './label/label.module#LabelModule'
 	},
 	{
+		path: 'manage',
+		loadChildren: './manage/manage.module#ManageModule'
+	},
+	{
 		path:'**',
 		component:ImpressionComponent
 	}

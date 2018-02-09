@@ -1,3 +1,30 @@
-<p>
-  article-table works!
-</p>
+<div class="row">
+    <div class="col-md-12">
+        <div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
+            <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+            <input #gb type="text" pInputText size="50" placeholder="输入关键字">
+        </div>
+        <p-dataTable [value]="articles" [rows]="10" [paginator]="true" [globalFilter]="gb" #dt>
+            <p-header>已发布文章管理</p-header>
+            <p-column field="name" header="标题名" [filter]="true" filterPlaceholder="检索"></p-column>
+            <p-column field="time" header="发布时间：({{yearFilter||'无'}})" [filter]="true" filterMatchMode="equals">
+                <ng-template pTemplate="filter" let-col>
+                    <i class="fa fa-close" (click)="yearFilter=null;dt.filter(null,col.field,col.filterMatchMode)"></i>
+                    <p-slider [style]="{'width':'100%','margin-top':'8px'}" [(ngModel)]="yearFilter" [min]="2000" [max]="2090" (onChange)="onYearChange($event, dt, col)"></p-slider>
+                </ng-template>
+            </p-column>
+            <p-column field="label" header="专题分类" [filter]="true" filterMatchMode="equals">
+                <ng-template pTemplate="filter" let-col>
+                    <p-dropdown [options]="{{labels}}" [style]="{'width':'100%'}" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter"></p-dropdown>
+                </ng-template>
+            </p-column>
+            <p-column field="num" header="点赞数" [filter]="true" filterPlaceholder="检索"></p-column>
+            <p-column header="操作" [style]="{'width':'80px'}">
+                <ng-template let-item="rowData" pTemplate="body">
+                    <button type="button" class="btn btn-danger" (click)="delArticle(item)">删除</button>
+                </ng-template>
+            </p-column>
+        </p-dataTable>
+    </div>
+
+</div>

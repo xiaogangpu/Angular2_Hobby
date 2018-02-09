@@ -19,10 +19,14 @@ import { EchartsInfoDirective } from './impression/echarts-info.directive';
 
 import { UserRecommendServiceService} from './users/user-recommend/services/user-recommend-service.service';
 import { LabelRecommendService} from './label/label-recommend/services/label-recommend.service';
+import { UserLoginService } from './manage/user-login/services/user-login.service';
+import { UserRegistryService } from './manage/user-registry/services/user-registry.service';
+
 import { UserLoginComponent } from './manage/user-login/user-login.component';
 import { UserRegistryComponent } from './manage/user-registry/user-registry.component';
 import { UserTableComponent } from './manage/user-table/user-table.component';
 import { ArticleTableComponent } from './manage/article-table/article-table.component';
+import { ManageComponent } from './manage/manage.component';
 // export function createTranslateLoader(http: Http) {
 //   return new TranslateStaticLoader(http, './assets/i18n', '.json');
 // }
@@ -37,7 +41,8 @@ import { ArticleTableComponent } from './manage/article-table/article-table.comp
     UserLoginComponent,
     UserRegistryComponent,
     UserTableComponent,
-    ArticleTableComponent
+    ArticleTableComponent,
+    ManageComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,9 @@ import { ArticleTableComponent } from './manage/article-table/article-table.comp
   ],
   providers: [
     UserRecommendServiceService,
-    LabelRecommendService
+    LabelRecommendService,
+    UserLoginService,
+    UserRegistryService
   ],
   bootstrap: [AppComponent]
 })
