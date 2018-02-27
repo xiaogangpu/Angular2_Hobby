@@ -55,58 +55,24 @@ import {TabTranscludeDirective} from "./tab-transclude";
       .tabset-content {
       }
     </style>
-    <nav [ngClass]="{'tabset-style': !disableStyle}">
-      <ul class="tabset-header" [ngClass]="customNavClass">
-        <li role="presentation" *ngFor="let tab of tabs" [class.active]="tab.active"
-            [class.disabled]="tab.disabled" (click)="changeActiveTab(tab)">
+        <li (click)="onClick($event)">
           <span [tabTransclude]="tab.headingTemplate">{{ tab.title }}</span>
         </li>
-      </ul>
-    </nav>
-    <div class="tabs-container" [ngClass]="customTabsClass" [@.disabled]="!animate">
-      <div class="tabset-content">
-        <ng-content></ng-content>
-      </div>
-    </div>
   `
 })
 export class TabsetComponent implements AfterContentInit {
-  @Input() public disableStyle: boolean;
-
-  @Input() public animate: boolean = true;
-
-  @Input() public customNavClass: string = '';
-
-  @Input() public customTabsClass: string = '';
-
-  @ContentChildren(TabComponent) public tabs: QueryList<TabComponent>;
-
   @Output() public onSelect = new EventEmitter(false);
 
-  public changeActiveTab(tab: TabComponent) {
-    if (!tab.disabled && !tab.active) {
-      const me = this;
-      const tabs = this.tabs.toArray();
-      tabs.forEach((t) => t.active = false);
-      if (this.animate) {
-        setTimeout(() => {
-          tab.active = true;
-          me.onSelect.emit(tabs.indexOf(tab));
-        }, 200);
-      } else {
-        tab.active = true;
-        me.onSelect.emit(tabs.indexOf(tab));
-      }
-    }
+  public onClick($event) {
+    const me = this;
+    setTimeout(() => {
+
+    }, 200);
   }
 
   public ngAfterContentInit() {
     setTimeout(() => {
-      const readTabs = this.tabs.toArray();
-      const activeTab = readTabs.find((tab) => tab.active === true);
-      if (!activeTab && readTabs.length > 0) {
-        readTabs[0].active = true;
-      }
+
     });
   }
 

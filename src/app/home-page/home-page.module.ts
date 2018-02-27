@@ -35,6 +35,8 @@ import { SwiperModule, SwiperConfigInterface, SWIPER_CONFIG} from 'ngx-swiper-wr
   };
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
+import { MoveTopComponent} from '../tool/move-top/move-top.component';
+
 import { homePageRoutes} from './home-page.routes';
 
 @NgModule({
@@ -59,7 +61,8 @@ import { homePageRoutes} from './home-page.routes';
     InfiniteScrollComponent,
     UserRecommendComponent,
     LabelRecommendComponent,
-    InfiniteScrollDetailComponent
+    InfiniteScrollDetailComponent,
+    MoveTopComponent
   ],
   providers: [
     {

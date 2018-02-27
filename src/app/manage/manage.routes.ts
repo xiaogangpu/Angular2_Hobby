@@ -8,7 +8,7 @@ export const manageRoutes = [
         {
             path: '',
             component: ManageComponent,
-            chilren:[
+            children:[
                 {
                     path: '',
                     redirectTo:'article/1',

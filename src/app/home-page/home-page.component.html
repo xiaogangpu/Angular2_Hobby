@@ -30,13 +30,13 @@
 
         <div class="col-md-3 ">
             <div class="action-container">
-                <a class="action-button" routerLink="homePage/read/1">旅之弥散</a>
+                <a class="action-button" routerLink="/homePage/read/1">杂文一角</a>
 
-                <a class="action-button" routerLink="homePage/tour/1">我的大学</a>
+                <a class="action-button" routerLink="/homePage/tour/1">照片与心情</a>
 
-                <a class="action-button" routerLink="homePage/read/1">随言笔记</a>
+                <a class="action-button" [routerLink]="['/users/user-list']">创作人士</a>
 
-                <a class="action-button" routerLink="homePage/read/1">成员认识</a>
+                <a class="action-button" [routerLink]="['/label/label-list']">专题分类</a>
             </div>
         </div>
     </div>
@@ -48,6 +48,7 @@
         </div>
         <div class="col-md-3">
             <app-user-recommend></app-user-recommend>
+            <app-move-top></app-move-top>
         </div>
     </div>
 </div>

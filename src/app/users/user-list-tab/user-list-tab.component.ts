@@ -73,7 +73,6 @@ export class UserListTabComponent implements OnInit {
    * @param ev 
    */
   onScrollDown(ev) {
-    debugger
     // console.log(`scrolled down, from ${this.className} ${this.info}`);
     this.loadListData(this.userId,this.currentTab);
   }

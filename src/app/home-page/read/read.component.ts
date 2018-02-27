@@ -45,6 +45,7 @@ export class ReadComponent implements OnInit {
   }
 
   public pageChange(event: any) {
+    debugger
     let page = parseInt(event.page)+1;
     this.router.navigateByUrl("homePage/read/"+page);
   }

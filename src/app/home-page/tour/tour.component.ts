@@ -12,7 +12,7 @@ import { TourService} from './service/tour.service';
 })
 export class TourComponent implements OnInit {
   public tourList: Array<Tour>;
-  public totalData: string;
+  public totalData: number;
 
   constructor(
     public tourService: TourService,
@@ -29,12 +29,23 @@ export class TourComponent implements OnInit {
   public loadData(page: number){
     this.tourService.getTour(page).subscribe(
       (res: Response)=>{
-        //this.totalData = res['total'];     // 这个没有为p-dataGrid组件传递总数据，跟后台对接应该对组件传参totalRecords
+        if(!this.totalData){
+          this.totalData = parseInt(res['total'],10);     // 这个没有为p-dataGrid组件传递总数据，跟后台对接应该对组件传参totalRecords
+        }
         this.tourList = res['items'];
       },
       error=>{},
       ()=>{}
     );
+  }
+
+  /**
+   * 点击页码后计算页数然后加载数据
+   * @param  
+   */
+  public loadCarsLazy($event) {
+    let temp = $event.first / $event.rows + 1;
+    this.router.navigateByUrl("/homePage/tour/"+temp);
   }
 
 }

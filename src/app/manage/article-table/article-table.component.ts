@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params} from '@angular/router';
-import { SelectItem } from 'primeng/primeng';
-import { DataTableModule} from 'primeng/primeng';
+
 import { ConfirmationService } from 'primeng/primeng';
 import { MessageService } from 'primeng/components/common/messageservice';
 
@@ -13,8 +12,10 @@ import {ArticleTableService} from './services/article-table.service';
   styleUrls: ['./article-table.component.css']
 })
 export class ArticleTableComponent implements OnInit {
-  public articles = [];
-  public labels = []; 
+  public articles: Array<any> = [];
+  public totalData: number = 0;
+  public labels = [];
+  public currentPage:any = 0;
   public yearFilter: number;
   public yearTimeout: any;
 
@@ -27,7 +28,10 @@ export class ArticleTableComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.loadListData();
+    this.activatedRoute.params.subscribe(params=>{
+      this.currentPage = params.pageId;
+      this.loadListData(this.currentPage);
+    });
     this.getLabelData();
   }
 
@@ -37,10 +41,22 @@ export class ArticleTableComponent implements OnInit {
     });  
   }
 
-  public loadListData(){
-    this.articleService.getListData().subscribe(data=>{
+  public loadListData(page){
+    this.articleService.getListData(page).subscribe(data=>{
       this.articles = data['items'];
+      if(!this.totalData){
+        this.totalData = parseInt(data['total'],10);     
+      }
     });
+  }
+
+  /**
+   * 点击页码后计算页数然后加载数据
+   * @param 
+   */
+  public loadCarsLazy($event:any){
+    let temp = $event.first / $event.rows + 1;
+		this.router.navigateByUrl("manage/article/"+temp);
   }
 
   public editArticle(item) {

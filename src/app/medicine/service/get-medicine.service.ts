@@ -11,10 +11,11 @@ export class GetMedicineService {
 
   constructor(public http: Http) { }
 
-  public getMedicineList(): Observable<Medicine[]>{
-    let url = this.listUrl;
+  public getMedicineList(currentPage: number): Observable<Medicine[]>{
+    let param = new URLSearchParams();
+    param.set("page",String(currentPage));
     return this.http
-                .get(url)
+                .get(this.listUrl,{search: param})
                 .map((res:Response) => {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
                   let result = res.json();
                   return result;

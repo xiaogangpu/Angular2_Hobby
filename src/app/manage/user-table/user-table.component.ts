@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params} from '@angular/router';
 import { SelectItem } from 'primeng/primeng';
+import { DataTableModule} from 'primeng/primeng';
 import { ConfirmationService } from 'primeng/primeng';
 import { MessageService } from 'primeng/components/common/messageservice';
 
@@ -13,6 +14,7 @@ import {UserTableService} from './services/user-table.service';
 })
 export class UserTableComponent implements OnInit {
   public users = [];
+  public totalRecord = 0;
 
   constructor(
     public router: Router,
@@ -23,15 +25,28 @@ export class UserTableComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.loadData();
-  }
-
-  public loadData(){
-    this.userService.getData().subscribe(data=>{
-      this.users = data['items'];
+    this.activatedRoute.params.subscribe(params=>{
+      this.loadData(params.pageId);
     });
   }
 
+  public loadData(page:any){
+    this.userService.getData(page).subscribe(data=>{
+      this.users = data['items'];
+      if(!this.totalRecord) {
+        this.totalRecord = data['total'];
+      }
+    });
+  }
+
+  /**
+   * 点击页码后计算页数然后加载数据
+   * @param 
+   */
+  public loadCarsLazy($event:any){
+    let temp = $event.first / $event.rows + 1;
+		this.router.navigateByUrl("manage/user/"+temp);
+  }
 
 /**
  * 弹出提示框确认删除

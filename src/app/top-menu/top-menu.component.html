@@ -7,51 +7,45 @@
         </h1>
         <nav>
             <ul>
-                <li class="current">
-                    <a href="#" routerLink="impression">地区印象</a>
+                <li>
+                    <a routerLink="impression">印象</a>
                 </li>
                 <li>
-                    <a href="#" routerLink="medicine">草药认知</a>
+                    <a routerLink="medicine">图片贴墙</a>
                 </li>
                 <li class="has_dd">
-                    <a href="#" routerLink="homePage/main">生活一览<span class="arrow"></span></a>
+                    <a routerLink="homePage/main">生活<span class="arrow"></span></a>
                     <section class="dropdown">
                         <ul>
-                            <li><a href="#" routerLink="homePage/tour/1">旅之弥散</a></li>
-                            <li><a href="#" routerLink="homePage/college">我的大学</a></li>
+                            <li><a routerLink="/homePage/read/1">杂文一角</a></li>
+                            <li><a routerLink="/homePage/tour/1">照片与心情</a></li>
                             <!-- <li class="has_dd"><a href="#" routerLink="">高中</a></li> -->
                             <li>
-                                <a href="#" routerLink="homePage/read/1">兴趣<span class="arrow"></span></a>
+                                <a [routerLink]="['/users/user-list']">兴趣板块<span class="arrow"></span></a>
                                 <section class="dropdown">
                                     <ul>
-                                        <li><a href="#" routerLink="homePage/read/1">随言笔记</a></li>
-                                        <li><a href="#" routereLink="homePage/anime">动漫记忆</a></li>
+                                        <li><a [routerLink]="['/label/label-list']">专题分类</a></li>
+                                        <li><a [routerLink]="['/users/user-list']">人物浏览</a></li>
                                     </ul>
                                 </section>
                             </li>
                         </ul>
                     </section>
                 </li>
-                <li>
-                    <ul *ngIf="!currentUser?.userName" class="nav navbar-nav navbar-right">
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                            <a routerLink="login">登录</a>
-                        </li>
-                        <li routerLinkActive="active">
-                            <a routerLink="register">注册</a>
-                        </li>
-                    </ul>
-                    <ul *ngIf="currentUser?.userName" class="nav navbar-nav navbar-right">
-                        <li routerLinkActive="active">
-                            <a routerLink="user">欢迎：{{currentUser?.userName}}</a>
-                        </li>
-                        <li routerLinkActive="active">
-                            <a routerLink="manage">后台管理</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" (click)="doLogout()">{{'app.logout' | translate}}</a>
-                        </li>
-                    </ul>
+                <li *ngIf="!currentUser?.userName">
+                    <a routerLink="login" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">登录</a>
+                </li>
+                <li *ngIf="!currentUser?.userName">
+                    <a routerLink="register">注册</a>
+                </li>
+                <li *ngIf="currentUser?.userName">
+                    <a routerLink="manage">欢迎：{{currentUser?.userName}}</a>
+                </li>
+                <li *ngIf="currentUser?.userName">
+                    <a routerLink="/manage/article/1">后台管理</a>
+                </li>
+                <li *ngIf="currentUser?.userName">
+                    <a href="javascript:void(0);" (click)="doLogout()">退出</a>
                 </li>
             </ul>
         </nav>

@@ -1,4 +1,4 @@
-<p-dataGrid [value]="medicineList" [paginator]="true" [rows]="20">
+<p-dataGrid [value]="medicineList" [paginator]="true" [rows]="20" [rowsPerPageOptions]="[4,8,12,16,20]" [totalRecords]="totalData" [lazy]="'true'" (onLazyLoad)="loadLazy($event)" [pageLinks]="5">
     <p-header>
         中草药图栏
     </p-header>

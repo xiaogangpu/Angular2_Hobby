@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule} from "@angular/router";
 import { HttpModule,JsonpModule,Http} from "@angular/http";
+import { FormsModule }   from '@angular/forms';
 import { ReactiveFormsModule} from "@angular/forms";
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 // import {TranslateModule,TranslateLoader,TranslateStaticLoader} from "ng2-tranlate";
@@ -24,9 +25,6 @@ import { UserRegistryService } from './manage/user-registry/services/user-regist
 
 import { UserLoginComponent } from './manage/user-login/user-login.component';
 import { UserRegistryComponent } from './manage/user-registry/user-registry.component';
-import { UserTableComponent } from './manage/user-table/user-table.component';
-import { ArticleTableComponent } from './manage/article-table/article-table.component';
-import { ManageComponent } from './manage/manage.component';
 // export function createTranslateLoader(http: Http) {
 //   return new TranslateStaticLoader(http, './assets/i18n', '.json');
 // }
@@ -39,15 +37,13 @@ import { ManageComponent } from './manage/manage.component';
     ImpressionComponent,
     EchartsInfoDirective,
     UserLoginComponent,
-    UserRegistryComponent,
-    UserTableComponent,
-    ArticleTableComponent,
-    ManageComponent
+    UserRegistryComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     BrowserAnimationsModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpModule,
     JsonpModule,

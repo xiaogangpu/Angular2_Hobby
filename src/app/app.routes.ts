@@ -1,5 +1,7 @@
-import {ImpressionComponent} from "./impression/impression.component";
-import {MedicineComponent} from "./medicine/medicine.component";
+import { ImpressionComponent} from "./impression/impression.component";
+import { UserTableComponent } from "./manage/user-table/user-table.component";
+import { UserLoginComponent} from './manage/user-login/user-login.component';
+import { UserRegistryComponent} from './manage/user-registry/user-registry.component';
 
 export const appRoutes = [
 	{
@@ -9,6 +11,13 @@ export const appRoutes = [
 	},{
 		path:'impression',
 		component:ImpressionComponent
+	},{
+		path: 'login',
+		component:UserLoginComponent
+	},
+	{
+		path: 'register',
+		component:UserRegistryComponent
 	},
 	{
 		path:'medicine',
